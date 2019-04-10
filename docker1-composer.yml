@@ -1,0 +1,36 @@
+import java.io.FileReader; 
+import java.util.Iterator; 
+import java.util.Map; 
+  
+import org.json.simple.JSONArray; 
+import org.json.simple.JSONObject; 
+import org.json.simple.parser.*; 
+  
+public class Names  
+{ 
+    public static void main(String[] args) throws Exception  
+    { 
+        // parsing file "data.json" 
+        Object obj = new JSONParser().parse(new FileReader("data.json")); 
+          
+        // typecasting obj to JSONObject 
+        JSONObject name = (JSONObject) obj; 
+          
+        // getting firstName and lastName 
+        String firstName = (String) name.get("firstName"); 
+        String lastName = (String) name.get("lastName"); 
+          
+        System.out.println(firstName); 
+        System.out.println(lastName); 
+          
+          
+        // iterating address Map 
+        Iterator<Map.Entry> itr1 = address.entrySet().iterator(); 
+        while (itr1.hasNext()) { 
+            Map.Entry pair = itr1.next(); 
+            System.out.println(pair.getKey() + " : " + pair.getValue()); 
+        } 
+   
+        } 
+    } 
+} 
